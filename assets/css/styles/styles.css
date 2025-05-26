@@ -543,6 +543,10 @@ a:focus {
     color: #040404;
 	text-transform: capitalize;
 }
+.broad-focus-icon img {
+	height: 100px;
+    width: 100px;
+}
 @media (max-width: 992px) {
 	.broad-focus-carousel-wrapper {
 		flex-direction: column;
