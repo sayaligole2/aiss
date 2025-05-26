@@ -50,8 +50,7 @@ $(document).ready(function () {
       ]
     });
 
-
-
+//Speakers search by name function
  $('#speakers-search').on('input', function () {
       const searchTerm = $(this).val().toLowerCase().trim();
 
@@ -67,6 +66,31 @@ $(document).ready(function () {
       });
 
       $('.speakers-slider').slick('refresh'); // Redraw layout
+    });
+	
+	//Broad focus slider
+	$(".broad-focus-slider").slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      arrows: true,
+      dots: false,
+      infinite: true,
+      responsive: [
+		{
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 2,
+			slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+			slidesToScroll: 1,
+          }
+        }
+      ]
     });
 	
 });

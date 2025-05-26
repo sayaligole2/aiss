@@ -157,9 +157,32 @@ a:focus {
     display: flex;
 	gap: 30px;
 }
+.about-img-box:nth-child(2n) {
+	animation: floatDown 3s ease-in-out infinite;
+}
+.about-img-box:nth-child(2n+1) {
+	animation: floatUp 3s ease-in-out infinite;
+}
+@keyframes floatUp {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+@keyframes floatDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(20px);
+      }
+    }
 .about-img {
 	border-radius: 20px;
 	transition: transform 0.3s ease;
+	animation: float 3s ease-in-out infinite;
 }
 .about-img:hover {
 	transform: scale(1.05);
@@ -310,7 +333,7 @@ a:focus {
   font-size: 40px;
   color: #000;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%); 
 }
@@ -362,6 +385,10 @@ a:focus {
     display: flex;
     justify-content: flex-end;
 	margin-bottom: 15px;
+}
+.half-border-circle:hover {
+  box-shadow: 0 8px 16px rgba(16, 115, 212, 0.6);
+  cursor: pointer;
 }
 .half-border-circle img {
   width: 160px;
@@ -452,6 +479,108 @@ a:focus {
 	}
 	.slick-next {
 		right: 35%;
+	}
+}
+
+/* Broad Focus CSS */
+.broad-focus-section {
+	background: url("../../../assets/images/broad-focus-bg.svg") no-repeat;
+	background-size: cover;
+	padding: 70px 0 130px;
+}
+.broad-focus-carousel-wrapper {
+    display: flex;
+    gap: 50px;
+}
+.broad-focus-heading-box {
+    width: 31%;
+    align-self: center;
+}
+.broad-focus-heading {
+	font-family: "poppins-bold", sans-serif;
+    font-size: 54px;
+    line-height: 54px;
+    color: #fff;
+}
+.broad-focus-slider {
+	width: 65%;
+}
+.broad-focus-slider .slick-prev, 
+.broad-focus-slider .slick-next {
+	background: #044890;
+	top: 112%;
+}
+.broad-focus-slider .slick-prev:before, 
+.broad-focus-slider .slick-next:before {
+	color: #fff;
+}
+.broad-focus-slider .slick-prev {
+	left: 15px;
+} 
+.broad-focus-slider .slick-next {
+	right: auto;
+	left: 9%;
+}
+.broad-focus-card {
+    background: #fff;
+    min-height: 390px;
+	border-radius: 12px;
+    padding: 30px;
+	display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+.broad-focus-slider .slick-track {
+	display: flex;
+	gap: 20px;
+}
+.broad-focus-icon {
+    margin-bottom: 40px;
+}
+.focus-title {
+	font-family: "poppins-bold", sans-serif;
+    font-size: 24px;
+    color: #040404;
+	text-transform: capitalize;
+}
+@media (max-width: 992px) {
+	.broad-focus-carousel-wrapper {
+		flex-direction: column;
+	}
+	.broad-focus-heading-box,
+	.broad-focus-slider {
+		width: 100%;
+	}
+	.broad-focus-heading {
+		font-size: 36px;
+		line-height: 36px;
+	}
+	.broad-focus-slider .slick-next {
+		left: 55px;
+	}
+}
+@media (max-width: 767px) {
+	.broad-focus-slider .slick-prev, 
+	.broad-focus-slider .slick-next {
+		top: 100%;
+	}
+}
+@media (max-width: 600px) {
+	.broad-focus-slider .slick-track {
+		gap: 0;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.broad-focus-slider .slick-next {
+		left: 75px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1399px) {
+	.broad-focus-slider .slick-next {
+		left: 12%;
+	}
+	.broad-focus-heading {
+		font-size: 42px;
 	}
 }
 
